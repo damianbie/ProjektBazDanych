@@ -1,0 +1,51 @@
+app_login:
+  path:      /login
+  controller: App\Controller\Admin\Security\SecurityController::login
+
+app_logout:
+  path:      /logout
+  controller: App\Controller\Admin\Security\SecurityController::logout
+
+app_information:
+  path: /informacje
+  controller: App\Controller\Admin\ProjectInformationController::index
+
+admin_dashboard:
+  path: /
+  controller: App\Controller\Admin\DashboardController::index
+
+admin_orders:
+  path: /zlecenia/{id}
+  defaults:
+    id: ''
+  requirements:
+    id: '\d+'
+  controller: App\Controller\Admin\OrderController::index
+
+admin_order_add:
+  path: /zlecenia/nowe
+  controller: App\Controller\Admin\OrderController::add
+
+admin_clients:
+  path: /klienci/{id}
+  defaults:
+    id: ''
+  requirements:
+    id: '\d+'
+  controller: App\Controller\Admin\ClientsController::index
+
+admin_client_add:
+  path: /klienci/nowy
+  controller: App\Controller\Admin\ClientsController::add
+
+admin_workers:
+  path: /pracownicy/{id}
+  defaults:
+    id: ''
+  requirements:
+    id: '\d+'
+  controller: App\Controller\Admin\WorkersController::index
+
+admin_workers_add:
+  path: /pracownicy/nowy/
+  controller: App\Controller\Admin\WorkersController::add
