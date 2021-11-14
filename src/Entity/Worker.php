@@ -54,10 +54,16 @@ class Worker
      */
     private $bonus;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Serivce::class, mappedBy="madeBy")
+     */
+    private $serivces;
+
 
     public function __construct()
     {
         $this->workPlace = new ArrayCollection();
+        $this->serivces = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -170,6 +176,33 @@ class Worker
     public function setBonus(?float $bonus): self
     {
         $this->bonus = $bonus;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Serivce[]
+     */
+    public function getSerivces(): Collection
+    {
+        return $this->serivces;
+    }
+
+    public function addSerivce(Serivce $serivce): self
+    {
+        if (!$this->serivces->contains($serivce)) {
+            $this->serivces[] = $serivce;
+            $serivce->addMadeBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSerivce(Serivce $serivce): self
+    {
+        if ($this->serivces->removeElement($serivce)) {
+            $serivce->removeMadeBy($this);
+        }
 
         return $this;
     }
