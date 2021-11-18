@@ -25,7 +25,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $user->setPassword($this->_pass->hashPassword($user, $data['pass']));
         $user->setRoles($data['roles']);
         $user->setWorker($data['worker']);
-        $user->setAccountCreaterAt(new \DateTime('now'));
+        $user->setAccountCreaterAt(new \DateTimeImmutable('now'));
 
         return $user;
     }

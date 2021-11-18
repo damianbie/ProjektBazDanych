@@ -1,5 +1,63 @@
 {% extends 'core/empty_admin.html.twig' %}
+{% block title %}Pracownicy {% endblock %}
+
+
+{% block stylesheet %}
+    <link
+{% endblock %}
+
+{% block script %}
+    <script>
+        $("#example1").DataTable({
+          "responsive": true, "lengthChange": false, "autoWidth": false,
+          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    </script>
+{% endblock %}
+
 
 {% block mainContent %}
-    fdsfsdfdsf
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">DataTable with default features</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table class="table table-bordered table-striped dataTable">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Imie</td>
+                        <td>Nazwisko</td>
+                        <td>Numer telefonu</td>
+                        <td>Zatrudniony od</td>
+                        <td>Akcje</td>
+                    </tr>
+                </thead>
+                    <tbody>
+                        {% for w in workers %}
+                            <tr>
+                                <td> {{ w.id }} </td>
+                                <td> {{ w.name }} </td>
+                                <td> {{ w.surname }}</td>
+                                <td> {{ w.phoneNumber|default('---') }}</td>
+                                <td> {{ w.hiredAt|date('d/m/Y') }}</td>
+                                <td> Akcje</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                <tfoot>
+                    <tr>
+                        <td>ID</td>
+                        <td>Imie</td>
+                        <td>Nazwisko</td>
+                        <td>Numer telefonu</td>
+                        <td>Zatrudniony od</td>
+                        <td>Akcje</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
 {% endblock %}

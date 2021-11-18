@@ -25,6 +25,8 @@ class WorkerFixtures extends Fixture implements DependentFixtureInterface
         $worker->setSurname($data['surname']);
         $worker->setBirthDate($data['birthDate']);
         $worker->setWorkPlace($data['workPlace']);
+        $worker->setHiredAt($data['hiredAt']);
+        $worker->setPhoneNumber($this->_faker->phoneNumber());
 
         return $worker;
     }
@@ -36,6 +38,7 @@ class WorkerFixtures extends Fixture implements DependentFixtureInterface
             'surname'       => 'Bielecki',
             'birthDate'     => new \DateTime('now'),
             'workPlace'     => $this->getReference(WorkPlaceFixtures::WORKPLACE_BOSS),
+            'hiredAt'       => new \DateTimeImmutable('now'),
         ));
 
         $manager->persist($worker);
@@ -47,6 +50,7 @@ class WorkerFixtures extends Fixture implements DependentFixtureInterface
                 'surname'       => $this->_faker->lastName,
                 'birthDate'     => $this->_faker->dateTime($max='now'),
                 'workPlace'     => $this->getReference(WorkPlaceFixtures::WORKPLACE_MECHANIC),
+                'hiredAt'       => \DateTimeImmutable::createFromMutable($this->_faker->dateTime($max='now')),
             ));
             $manager->persist($worker1);
         }
