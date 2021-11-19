@@ -108,9 +108,9 @@ class Worker
     }
 
     /**
-     * @return Collection|WorkPlace[]
+     * @return Collection|WorkPlace[]|null
      */
-    public function getWorkPlace(): Collection
+    public function getWorkPlace()
     {
         return $this->workPlace;
     }

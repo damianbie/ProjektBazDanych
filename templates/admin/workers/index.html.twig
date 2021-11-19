@@ -19,20 +19,26 @@
 {% block mainContent %}
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
+            <h3 class="card-title">Pracownicy w bazie danych</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
             <table class="table table-bordered table-striped dataTable">
                 <thead>
-                    <tr>
-                        <td>ID</td>
-                        <td>Imie</td>
-                        <td>Nazwisko</td>
-                        <td>Numer telefonu</td>
-                        <td>Zatrudniony od</td>
-                        <td>Akcje</td>
-                    </tr>
+                    {% set table_header %}
+                        <tr>
+                            <td>ID</td>
+                            <td>Imie</td>
+                            <td>Nazwisko</td>
+                            <td>Data urodzenia</td>
+                            <td>Numer telefonu</td>
+                            <td>Zatrudniony od</td>
+                            <td>Stanowisko</td>
+                            <td>Pensja</td>
+                            <td>Akcje</td>
+                        </tr>
+                    {% endset %}
+                {{ table_header }}
                 </thead>
                     <tbody>
                         {% for w in workers %}
@@ -40,21 +46,28 @@
                                 <td> {{ w.id }} </td>
                                 <td> {{ w.name }} </td>
                                 <td> {{ w.surname }}</td>
+                                <td> {{ w.birthDate|date('d/m/Y') }}</td>
                                 <td> {{ w.phoneNumber|default('---') }}</td>
                                 <td> {{ w.hiredAt|date('d/m/Y') }}</td>
-                                <td> Akcje</td>
+                                <td> {{ w.workPlace.getName() }}</td>
+                                <td> {{ w.bonus + w.workPlace.getMinEarnings() }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a type="button" class="btn btn-default">Szczegóły</a>
+                                        <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu" style="">
+                                            <a class="dropdown-item" href="#">Edytuj</a>
+                                            <a class="dropdown-item" href="#">Usuń</a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 <tfoot>
-                    <tr>
-                        <td>ID</td>
-                        <td>Imie</td>
-                        <td>Nazwisko</td>
-                        <td>Numer telefonu</td>
-                        <td>Zatrudniony od</td>
-                        <td>Akcje</td>
-                    </tr>
+                    {{ table_header }}
                 </tfoot>
             </table>
         </div>
