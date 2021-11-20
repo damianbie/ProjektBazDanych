@@ -15,7 +15,7 @@ class WorkerFixtures extends Fixture implements DependentFixtureInterface
 
     public function __construct()
     {
-        $this->_faker = Factory::create();
+        $this->_faker = Factory::create('pl_PL');
     }
 
     private function _createWorker(array $data): Worker
