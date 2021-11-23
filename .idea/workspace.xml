@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4586fe-ca89-4d6e-b1ad-52d161561c93" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/BazyDanychV1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BazyDanychV1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ClientsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/WorkPlaceFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/WorkPlaceFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/WorkPlace.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/WorkPlace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,6 +185,10 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/vendor/jms/serializer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/serializer" />
     </include_path>
   </component>
   <component name="ProjectId" id="20VzSwtD6EcVqrjoLcWKTTifV6a" />
@@ -235,7 +246,9 @@
       <workItem from="1637240359778" duration="100000" />
       <workItem from="1637247615854" duration="4208000" />
       <workItem from="1637361601238" duration="7132000" />
-      <workItem from="1637425573399" duration="2826000" />
+      <workItem from="1637425573399" duration="9729000" />
+      <workItem from="1637482886930" duration="10887000" />
+      <workItem from="1637604697462" duration="9220000" />
     </task>
     <servers />
   </component>

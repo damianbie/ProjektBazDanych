@@ -17,6 +17,24 @@
 
 
 {% block mainContent %}
+    {% set flash_sc = app.flashes('successForm') %}
+    {% if flash_sc is defined and flash_sc|length > 0 %}
+        {% dump(flash_sc) %}
+        {% if flash_sc[0] == 0 %} {% set _scc = 0 %}
+        {% else %} {% set _scc = 1 %} {% endif %}
+
+        {% dump(app.flashes('error')) %}
+        <div class="alert {% if _scc==1 %}alert-success{% else %} alert-warning {% endif %} alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-ban"></i> {% if _scc==1 %}Sukces!{% else %}Nieoczekiwany błąd{% endif %}</h5>
+            <ul>
+            {% for ms in app.flashes('msg') %}
+                <li>{{ ms }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Pracownicy w bazie danych</h3>
@@ -59,7 +77,7 @@
                                         </button>
                                         <div class="dropdown-menu" role="menu" style="">
                                             <a class="dropdown-item" href="#">Edytuj</a>
-                                            <a class="dropdown-item" href="#">Usuń</a>
+                                            <a class="dropdown-item text-danger" href="#">Usuń</a>
                                         </div>
                                     </div>
                                 </td>
@@ -73,4 +91,92 @@
         </div>
         <!-- /.card-body -->
     </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Stanowiska</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table class="table table-bordered table-striped dataTable">
+                <thead>
+                {% set table_header %}
+                    <tr>
+                        <td>ID</td>
+                        <td>Nazwa</td>
+                        <td>Opis</td>
+                        <td>min. zarobki</td>
+                        <td>Akcje</td>
+                    </tr>
+                {% endset %}
+                {{ table_header }}
+                </thead>
+                <tbody>
+                {% for w in workPlaces %}
+                    <tr>
+                        <td> {{ w.id }} </td>
+                        <td> {{ w.name }} </td>
+                        <td> {{ w.description }}</td>
+                        <td>{{ w.minEarnings }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a type="button" class="btn btn-default">Szczegóły</a>
+                                <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu" role="menu" style="">
+                                    <a class="dropdown-item" href="#">Edytuj</a>
+                                    <a class="dropdown-item text-danger" href="#">Usuń</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                {{ table_header }}
+                </tfoot>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Stanowiska</h3>
+        </div>
+        <!-- /.card-header -->
+
+        {{ form_start(newWorkPlaceForm) }}
+    <div class="card-body">
+            <div class="form-group">
+                {{ form_label(newWorkPlaceForm.name) }}
+                {{ form_widget(newWorkPlaceForm.name, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(newWorkPlaceForm.min_earnings) }}
+                {{ form_widget(newWorkPlaceForm.min_earnings, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(newWorkPlaceForm.description) }}
+                {{ form_widget(newWorkPlaceForm.description, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            {% set formErrors = newWorkPlaceForm.vars.errors.form.getErrors(true) %}
+            {% if formErrors|length %}
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Błędy w formularzu</h5>
+                        <ul>
+                            {% for error in formErrors %}
+                                <li>{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                </div>
+            {% endif %}
+        <div class="card-footer">
+            {{ form_widget(newWorkPlaceForm.button, {'attr': {'class': 'btn btn-primary float-right'}}) }}
+        </div>
+        {{ form_end(newWorkPlaceForm) }}
 {% endblock %}
