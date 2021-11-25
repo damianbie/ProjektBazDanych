@@ -5,11 +5,13 @@ namespace App\Controller\Admin;
 use App\Controller\Admin\Core\BaseAdminController;
 use App\Entity\Worker;
 use App\Entity\WorkPlace;
+use App\Form\AddEditWorkerType;
 use App\Form\NewWorkPlaceType;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 
 class WorkersController extends BaseAdminController
@@ -20,7 +22,7 @@ class WorkersController extends BaseAdminController
         $this->_sess = $sess;
     }
 
-    public function index($id, Request $request): Response
+    public function index(Request $request): Response
     {
         $wp = new WorkPlace();
         $form = $this->createForm(NewWorkPlaceType::class, $wp);
@@ -59,11 +61,29 @@ class WorkersController extends BaseAdminController
             'newWorkPlaceForm'  => $form->createView(),
         ]);
     }
-    public function add(): Response
+
+    public function detalis(Worker $worker, Request $request)
     {
-        return $this->render('admin/workers/index.html.twig', [
-            'active_nav_route' => 'admin_workers_add',
-            'content_title' => 'workers add',
+        $worker_form = $this->createForm(AddEditWorkerType::class, $worker);
+        $worker_form->handleRequest($request);
+
+        return $this->renderForm("admin/workers/detalis.html.twig", [
+            'active_nav_route'  => 'admin_workers',
+            'content_title'     => '',
+            'worker_form'       => $worker_form
+            ]);
+    }
+
+    public function add(Request $request): Response
+    {
+        $worker = new Worker();
+        $worker_form = $this->createForm(AddEditWorkerType::class, $worker);
+        $worker_form->handleRequest($request);
+
+        return $this->renderForm("admin/workers/detalis.html.twig", [
+            'active_nav_route'  => 'admin_workers',
+            'content_title'     => '',
+            'worker_form'       => $worker_form
         ]);
     }
 }

@@ -3,19 +3,31 @@
 
 
 {% block stylesheet %}
-    <link
+
 {% endblock %}
 
-{% block script %}
+{% block scripts %}
     <script>
-        $("#").DataTable({
-          "responsive": true, "lengthChange": false, "autoWidth": false,
-          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $(document).ready( function () {
+            $('#dataTablePracownicy, #dataTableStanowiska').DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5',
+                ]
+            });
+
+            $('#dataTableStanowiska tbody, #dataTablePracownicy tbody').on( 'click', 'tr', function () {
+                $(this).toggleClass('table-active');
+            } );
+        });
     </script>
 {% endblock %}
-
-
 {% block mainContent %}
     {% set flash_sc = app.flashes('successForm') %}
     {% if flash_sc is defined and flash_sc|length > 0 %}
@@ -41,7 +53,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <table class="table table-bordered table-striped dataTable">
+            <table class="table table-bordered table-striped dataTable" id="dataTablePracownicy">
                 <thead>
                     {% set table_header %}
                         <tr>
@@ -71,7 +83,7 @@
                                 <td> {{ w.bonus + w.workPlace.getMinEarnings() }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a type="button" class="btn btn-default">Szczegóły</a>
+                                        <a type="button" class="btn btn-default" href="{{ path('admin_workers_detalis', {id: w.id}) }}">Szczegóły</a>
                                         <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                                             <span class="sr-only">Toggle Dropdown</span>
                                         </button>
@@ -98,7 +110,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <table class="table table-bordered table-striped dataTable">
+            <table class="table table-bordered table-striped dataTable" id="dataTableStanowiska">
                 <thead>
                 {% set table_header %}
                     <tr>
@@ -175,8 +187,10 @@
                         </ul>
                 </div>
             {% endif %}
+    </div>
         <div class="card-footer">
             {{ form_widget(newWorkPlaceForm.button, {'attr': {'class': 'btn btn-primary float-right'}}) }}
         </div>
         {{ form_end(newWorkPlaceForm) }}
+    </div>
 {% endblock %}

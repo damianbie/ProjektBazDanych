@@ -39,12 +39,14 @@ admin_client_add:
   controller: App\Controller\Admin\ClientsController::add
 
 admin_workers:
-  path: /pracownicy/{id}
-  defaults:
-    id: ''
+  path: /pracownicy/
+  controller: App\Controller\Admin\WorkersController::index
+
+admin_workers_detalis:
+  path: /pracowni/{id}
+  controller: App\Controller\Admin\WorkersController::detalis
   requirements:
     id: '\d+'
-  controller: App\Controller\Admin\WorkersController::index
 
 admin_workers_add:
   path: /pracownicy/nowy/

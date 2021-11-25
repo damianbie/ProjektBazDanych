@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4586fe-ca89-4d6e-b1ad-52d161561c93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/BazyDanychV1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BazyDanychV1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/workers/detalis.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/admin.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/WorkPlaceFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/WorkPlaceFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/WorkPlace.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/WorkPlace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -248,7 +243,8 @@
       <workItem from="1637361601238" duration="7132000" />
       <workItem from="1637425573399" duration="9729000" />
       <workItem from="1637482886930" duration="10887000" />
-      <workItem from="1637604697462" duration="9220000" />
+      <workItem from="1637604697462" duration="9851000" />
+      <workItem from="1637838708793" duration="5302000" />
     </task>
     <servers />
   </component>

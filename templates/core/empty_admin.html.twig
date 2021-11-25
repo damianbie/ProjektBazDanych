@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+    <style>
+        table.dataTable tbody tr.table-active
+        {
+            background-color: rgba(0,0,0,.2);
+        }
+    </style>
+
     {% block stylesheet %}
     {% endblock %}
 </head>
@@ -231,20 +238,7 @@
 <script src="/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 <script>
-    $(document).ready( function () {
-        $('.dataTable').DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            dom: 'Bfrtip',
-            buttons: [
-                'copyHtml5',
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5',
-            ]
-        });
-    });
+
 </script>
 
 {% block scripts %}
