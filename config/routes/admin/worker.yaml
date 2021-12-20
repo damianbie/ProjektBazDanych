@@ -1,0 +1,25 @@
+admin_workers:
+  path: /pracownicy/
+  controller: App\Controller\Admin\WorkersController::index
+
+admin_workers_detalis:
+  path: /pracownik/{id}
+  controller: App\Controller\Admin\WorkersController::workerDetalis
+  requirements:
+    id: '\d+'
+
+admin_workers_edit:
+  path: /pracownik/edytuj/{id}
+  controller: App\Controller\Admin\WorkersController::workerEdit
+  requirements:
+    id: '\d+'
+
+admin_workers_delete:
+  path: /pracownik/usun/{id}
+  controller: App\Controller\Admin\WorkersController::deleteWorker
+  requirements:
+    id: '\d+'
+
+admin_workers_add:
+  path: /pracownicy/nowy/
+  controller: App\Controller\Admin\WorkersController::addWorker

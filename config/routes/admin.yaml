@@ -38,16 +38,5 @@ admin_client_add:
   path: /klienci/nowy
   controller: App\Controller\Admin\ClientsController::add
 
-admin_workers:
-  path: /pracownicy/
-  controller: App\Controller\Admin\WorkersController::index
-
-admin_workers_detalis:
-  path: /pracowni/{id}
-  controller: App\Controller\Admin\WorkersController::detalis
-  requirements:
-    id: '\d+'
-
-admin_workers_add:
-  path: /pracownicy/nowy/
-  controller: App\Controller\Admin\WorkersController::add
+admin_routes:
+  resource: admin/worker.yaml

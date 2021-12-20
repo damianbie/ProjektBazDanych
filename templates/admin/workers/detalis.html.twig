@@ -1,15 +1,12 @@
 {% extends 'core/empty_admin.html.twig' %}
 {% block title %}Pracownicy {% endblock %}
 
-
-{% block stylesheet %}
-
-{% endblock %}
-
 {% block scripts %}
     <script>
-        $(document).ready( function () {
-
+        $(function () {
+            $('.datepickerType').datetimepicker({
+                format: 'DD-MM-YYYY'
+            });
         });
     </script>
 {% endblock %}
@@ -43,7 +40,7 @@
 
         <div class="form-group">
             {{ form_label(worker_form.hiredAt) }}
-            {{ form_widget(worker_form.hiredAt, {'attr': {'class': 'form-control', 'disable':'disable'}}) }}
+            {{ form_widget(worker_form.hiredAt, {'attr': { 'disable':'disable'}}) }}
         </div>
 
         <div class="form-group">

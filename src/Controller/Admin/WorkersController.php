@@ -16,12 +16,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class WorkersController extends BaseAdminController
 {
-    private $_sess = null;
     public function __construct(SessionInterface $sess)
     {
-        $this->_sess = $sess;
     }
 
+    //Listowanie wszystkich pracownikow i staowisk, dodawanie stanowiska
     public function index(Request $request): Response
     {
         $wp = new WorkPlace();
@@ -55,17 +54,43 @@ class WorkersController extends BaseAdminController
 
         return $this->render('admin/workers/index.html.twig', [
             'active_nav_route'  => 'admin_workers',
-            'content_title'     => 'Lista wszystkich pracowników',
+            'content_title'     => 'Lista pracowników i stanowisk',
             'workers'           => $workers,
             'workPlaces'        => $workPlaces,
             'newWorkPlaceForm'  => $form->createView(),
         ]);
     }
 
-    public function detalis(Worker $worker, Request $request)
+    // ---- Pracownicy
+    public function workerDetalis(Worker $worker)
+    {
+
+    }
+    public function workerEdit(Worker $worker, Request $request)
     {
         $worker_form = $this->createForm(AddEditWorkerType::class, $worker);
         $worker_form->handleRequest($request);
+        $w = new Worker();
+
+        if($worker_form->isSubmitted() && $worker_form->isValid())
+        {
+            $w = $worker_form->getData();
+            $mng = $this->getDoctrine()->getManager();
+
+            $mng->persist($w);
+            $mng->flush();
+
+            $this->addFlash('msg', sprintf("Edytowano pracownika  %s (id: %d) ", $w->getName(), $w->getID()));
+            $this->addFlash('successForm', 1);
+
+            return $this->redirectToRoute('admin_workers');
+        }
+        else if($worker_form->isSubmitted())
+        {
+            $this->addFlash('successForm', 0);
+            $this->addFlash('msg', "Blad przy edytowaniu danych");
+            return $this->redirectToRoute('admin_workers');
+        }
 
         return $this->renderForm("admin/workers/detalis.html.twig", [
             'active_nav_route'  => 'admin_workers',
@@ -73,17 +98,33 @@ class WorkersController extends BaseAdminController
             'worker_form'       => $worker_form
             ]);
     }
-
-    public function add(Request $request): Response
+    public function addWorker(Request $request): Response
     {
         $worker = new Worker();
         $worker_form = $this->createForm(AddEditWorkerType::class, $worker);
         $worker_form->handleRequest($request);
 
         return $this->renderForm("admin/workers/detalis.html.twig", [
-            'active_nav_route'  => 'admin_workers',
+            'active_nav_route'  => 'admin_workers_add',
             'content_title'     => '',
             'worker_form'       => $worker_form
         ]);
     }
+    public function deleteWorker(Worker $worker)
+    {
+        $name   = $worker->getName();
+        $id     = $worker->getId();
+
+        $mn =$this->getDoctrine()->getManager();
+        $mn->remove($worker);
+        $mn->flush();
+
+        $this->addFlash('msg', sprintf("Usunieto pracownika %s (id: %d) ", $name, $id));
+        $this->addFlash('successForm', 1);
+
+        return $this->redirectToRoute('admin_workers');
+    }
+    // ---- Pracownicy
+
+
 }

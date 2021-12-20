@@ -34,7 +34,7 @@ class BaseAdminController extends AbstractController
         $sideBarNav['app_information'] = array('icon' => 'fa-atom', 'name' => 'Informacje');
         $sideBarNav['app_logout'] = array('icon' => 'fa-sign-out-alt', 'name' => 'Wyloguj');
 
-        $defaultParams['app_name'] = 'AppName';
+        $defaultParams['app_name'] = 'bazaDB';
         $defaultParams['sideBarNav'] = $sideBarNav;
 
         $parameters = array_merge($parameters, $defaultParams);
