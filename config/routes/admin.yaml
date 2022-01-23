@@ -26,17 +26,9 @@ admin_order_add:
   path: /zlecenia/nowe
   controller: App\Controller\Admin\OrderController::add
 
-admin_clients:
-  path: /klienci/{id}
-  defaults:
-    id: ''
-  requirements:
-    id: '\d+'
-  controller: App\Controller\Admin\ClientsController::index
-
-admin_client_add:
-  path: /klienci/nowy
-  controller: App\Controller\Admin\ClientsController::add
 
 admin_routes:
   resource: admin/worker.yaml
+
+clients_routes:
+  resource: admin/clients.yaml

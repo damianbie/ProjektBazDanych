@@ -37,7 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     /**
-     * @ORM\OneToOne(targetEntity=Worker::class, cascade={"persist", "remove"}, fetch="EAGER")
+     * @ORM\OneToOne(targetEntity=Worker::class, cascade={"persist", "remove"}, fetch="EAGER", inversedBy="account")
      * @ORM\JoinColumn(nullable=true)
      */
     private $worker;
@@ -45,12 +45,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="datetime_immutable")
      */
-    private $accountCreaterAt;
+    private $accountCreatedAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $lastLoggedIn;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
 
     public function getId(): ?int
     {
@@ -143,18 +148,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getAccountCreaterAt(): ?\DateTimeImmutable
-    {
-        return $this->accountCreaterAt;
-    }
-
-    public function setAccountCreaterAt(\DateTimeImmutable $accountCreaterAt): self
-    {
-        $this->accountCreaterAt = $accountCreaterAt;
-
-        return $this;
-    }
-
     public function getLastLoggedIn(): ?\DateTimeInterface
     {
         return $this->lastLoggedIn;
@@ -163,6 +156,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastLoggedIn(?\DateTimeInterface $lastLoggedIn): self
     {
         $this->lastLoggedIn = $lastLoggedIn;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): self
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    public function getAccountCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->accountCreatedAt;
+    }
+
+    public function setAccountCreatedAt(\DateTimeImmutable $accountCreatedAt): self
+    {
+        $this->accountCreatedAt = $accountCreatedAt;
 
         return $this;
     }

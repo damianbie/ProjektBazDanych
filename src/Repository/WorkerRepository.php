@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Worker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Repository\UserRepository;
 
 /**
  * @method Worker|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +19,14 @@ class WorkerRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Worker::class);
     }
+
+    public function findWorkersWithoutAccBuilder()
+    {
+        return ($this->createQueryBuilder('w')
+            ->leftJoin('w.account', 'u')
+            ->andWhere('u IS NULL')
+            );
+  }
 
     // /**
     //  * @return Worker[] Returns an array of Worker objects

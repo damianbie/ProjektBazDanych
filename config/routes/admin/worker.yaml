@@ -23,3 +23,37 @@ admin_workers_delete:
 admin_workers_add:
   path: /pracownicy/nowy/
   controller: App\Controller\Admin\WorkersController::addWorker
+
+
+admin_workPlace_edit:
+  path: /stanowisko/edytuj/{id}
+  controller: App\Controller\Admin\WorkersController::workPlaceEdit
+  requirements:
+    id: '\d+'
+
+admin_workPlace_delete:
+  path: /stanowisko/usun/{id}
+  controller: App\Controller\Admin\WorkersController::deleteWorkPlace
+  requirements:
+    id: '\d+'
+
+
+admin_user_add:
+  path: /uzytkownik/dodaj
+  controller: App\Controller\Admin\UsersController::addUser
+  requirements:
+
+admin_user_index:
+  path: /uzytkownicy/
+  controller: App\Controller\Admin\UsersController::index
+
+admin_user_enable:
+  path: /uzytkownik/{id}/aktywuj
+  controller: App\Controller\Admin\UsersController::enableUser
+  requirements:
+    id: '\d+'
+admin_user_disable:
+  path: /uzytkownik/{id}/deaktywuj
+  controller: App\Controller\Admin\UsersController::disableUser
+  requirements:
+    id: '\d+'

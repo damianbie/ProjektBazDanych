@@ -3,10 +3,14 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\Core\BaseAdminController;
+use App\Entity\User;
 use App\Entity\Worker;
 use App\Entity\WorkPlace;
+use App\Form\AddEditUserType;
 use App\Form\AddEditWorkerType;
+use App\Form\EditWorkPlaceType;
 use App\Form\NewWorkPlaceType;
+use App\Services\AccountManager;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,7 +25,7 @@ class WorkersController extends BaseAdminController
     }
 
     //Listowanie wszystkich pracownikow i staowisk, dodawanie stanowiska
-    public function index(Request $request): Response
+    public function index(Request $request, AccountManager $mn): Response
     {
         $wp = new WorkPlace();
         $form = $this->createForm(NewWorkPlaceType::class, $wp);
@@ -64,7 +68,13 @@ class WorkersController extends BaseAdminController
     // ---- Pracownicy
     public function workerDetalis(Worker $worker)
     {
+        $worker_form = $this->createForm(AddEditWorkerType::class, $worker, ['disabled' => true]);
 
+        return $this->renderForm("admin/workers/detalis.html.twig", [
+            'active_nav_route'  => 'admin_workers',
+            'content_title'     => '',
+            'worker_form'       => $worker_form
+        ]);
     }
     public function workerEdit(Worker $worker, Request $request)
     {
@@ -116,6 +126,7 @@ class WorkersController extends BaseAdminController
         $id     = $worker->getId();
 
         $mn =$this->getDoctrine()->getManager();
+        $mn->remove($worker->getAccount());
         $mn->remove($worker);
         $mn->flush();
 
@@ -126,5 +137,59 @@ class WorkersController extends BaseAdminController
     }
     // ---- Pracownicy
 
+    public function deleteWorkPlace(WorkPlace $w)
+    {
+        $name   = $w->getName();
+        $id     = $w->getId();
 
+        $mn =$this->getDoctrine()->getManager();
+        $userRepo = $this->getDoctrine()->getRepository(Worker::class);
+        $res = $userRepo->findBy(['workPlace' => $w->getId()]);
+        if(count($res) > 0)
+        {
+            $this->addFlash('msg', sprintf("W bazie istnieją pracownicy ze stanowiskiem %s(id: %d)", $w->getName(), $w->getId()));
+            $this->addFlash('successForm', 0);
+
+            return $this->redirectToRoute('admin_workers');
+        }
+
+        $mn->remove($w);
+        $mn->flush();
+
+        $this->addFlash('msg', sprintf("Usunieto stanowisko %s (id: %d) ", $name, $id));
+        $this->addFlash('successForm', 1);
+
+        return $this->redirectToRoute('admin_workers');
+    }
+    public function workPlaceEdit(WorkPlace $w, Request $request)
+    {
+        $work_form = $this->createForm(EditWorkPlaceType::class, $w);
+        $work_form->handleRequest($request);
+
+        if($work_form->isSubmitted() && $work_form->isValid())
+        {
+            $w = $work_form->getData();
+            $mng = $this->getDoctrine()->getManager();
+
+            $mng->persist($w);
+            $mng->flush();
+
+            $this->addFlash('msg', sprintf("Zaktlizowane stanowisko  %s (id: %d) ", $w->getName(), $w->getID()));
+            $this->addFlash('successForm', 1);
+
+            return $this->redirectToRoute('admin_workers');
+        }
+        else if($work_form->isSubmitted())
+        {
+            $this->addFlash('successForm', 0);
+            $this->addFlash('msg', "Blad przy edytowaniu danych");
+            return $this->redirectToRoute('admin_workers');
+        }
+
+        return $this->renderForm("admin/workers/editWorkPlace.html.twig", [
+            'active_nav_route'  => 'admin_workers',
+            'content_title'     => '',
+            'worker_form'       => $work_form
+        ]);
+    }
 }

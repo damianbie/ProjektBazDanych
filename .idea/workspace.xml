@@ -2,20 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4586fe-ca89-4d6e-b1ad-52d161561c93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/routes/admin/worker.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/DataTransformer/DateToStringTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormTypes/DatePickerType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/core/form/date_picker_widget.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/admin/clients.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20211221214705.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20211225125741.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20211225134046.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20211227092910.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Roles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AddEditUserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AddressType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CClientType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/EditWorkPlaceType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/PClientType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/AccountManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/clients/addClient.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/clients/editClient.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/users/addUser.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/workers/editWorkPlace.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/core/form/addressForm.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes/admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/admin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/admin/worker.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/admin/worker.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ClientsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Core/BaseAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Core/BaseAdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Worker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/AddEditWorkerType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AddEditWorkerType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FormTypes/DatePickerType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormTypes/DatePickerType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/WorkerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/WorkerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/MainAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/MainAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/users/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/users/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/workers/detalis.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/workers/detalis.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/core/form/date_picker_widget.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/form/date_picker_widget.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,15 +231,20 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/clients" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\clients" />
+      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\workers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\users" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin\Security" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin\Core" />
-      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\public\admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -257,7 +293,14 @@
       <workItem from="1637965838966" duration="63000" />
       <workItem from="1638280729521" duration="1150000" />
       <workItem from="1639653851837" duration="4907000" />
-      <workItem from="1639954615658" duration="11178000" />
+      <workItem from="1639954615658" duration="20606000" />
+      <workItem from="1640122635242" duration="5875000" />
+      <workItem from="1640289774195" duration="6593000" />
+      <workItem from="1640431783936" duration="46039000" />
+      <workItem from="1642179750782" duration="4161000" />
+      <workItem from="1642244907150" duration="1145000" />
+      <workItem from="1642258172544" duration="5000" />
+      <workItem from="1642757018283" duration="16576000" />
     </task>
     <servers />
   </component>

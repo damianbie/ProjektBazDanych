@@ -1,20 +1,11 @@
 {% extends 'core/empty_admin.html.twig' %}
-{% block title %}Pracownicy {% endblock %}
+{% block title %}Stanowiska pracy{% endblock %}
 
-{% block scripts %}
-    <script>
-        $(function () {
-            $('.datepickerType').datetimepicker({
-                format: 'DD-MM-YYYY'
-            });
-        });
-    </script>
-{% endblock %}
 {% block mainContent %}
 
     <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Szczegóły pracownika</h3>
+        <h3 class="card-title">Edycja stanowiska pracy</h3>
     </div><!-- /.card-header -->
     {{ form_start(worker_form) }}
     <div class="card-body">
@@ -24,29 +15,15 @@
         </div>
 
         <div class="form-group">
-            {{ form_label(worker_form.surname) }}
-            {{ form_widget(worker_form.surname, {'attr': {'class': 'form-control'}}) }}
+            {{ form_label(worker_form.min_earnings) }}
+            {{ form_widget(worker_form.min_earnings, {'attr': {'class': 'form-control'}}) }}
         </div>
 
         <div class="form-group">
-            {{ form_label(worker_form.birthDate) }}
-            {{ form_widget(worker_form.birthDate, {'attr': {'class': 'form-control'}}) }}
+            {{ form_label(worker_form.description) }}
+            {{ form_widget(worker_form.description, {'attr': {'class': 'form-control'}}) }}
         </div>
 
-        <div class="form-group">
-            {{ form_label(worker_form.phoneNumber) }}
-            {{ form_widget(worker_form.phoneNumber, {'attr': {'class': 'form-control'}}) }}
-        </div>
-
-        <div class="form-group">
-            {{ form_label(worker_form.hiredAt) }}
-            {{ form_widget(worker_form.hiredAt, {'attr': {'class': 'form-control'} }) }}
-        </div>
-
-        <div class="form-group">
-            {{ form_label(worker_form.bonus) }}
-            {{ form_widget(worker_form.bonus, {'attr': {'class': 'form-control'}}) }}
-        </div>
         {% set formErrors = worker_form.vars.errors.form.getErrors(true) %}
         {% if formErrors|length %}
             <div class="alert alert-danger alert-dismissible">

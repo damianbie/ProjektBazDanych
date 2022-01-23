@@ -1,4 +1,6 @@
 
-admin_routes:
+workers_routes:
   prefix: admin
   resource: routes/admin.yaml
+
+

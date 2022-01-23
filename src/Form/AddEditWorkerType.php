@@ -16,13 +16,6 @@ use App\Form\Types\DataPickerType;
 
 class AddEditWorkerType extends AbstractType
 {
-    private $_dateToStringTransformer = null;
-
-    function __construct(DateToStringTransformer $dateToString)
-    {
-        $this->_dateToStringTransformer = $dateToString;
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -35,11 +28,6 @@ class AddEditWorkerType extends AbstractType
             ->add('submit', SubmitType::class, ['label' => 'Zapisz zmiany'])
             //->add('workPlace')
         ;
-
-        $builder->get('birthDate')
-            ->addModelTransformer($this->_dateToStringTransformer);
-        $builder->get('hiredAt')
-            ->addModelTransformer($this->_dateToStringTransformer);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

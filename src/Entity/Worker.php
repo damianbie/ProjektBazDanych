@@ -59,6 +59,11 @@ class Worker
      */
     private $serivces;
 
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, mappedBy="worker", cascade={"persist", "remove"})
+     */
+    private $account;
+
 
     public function __construct()
     {
@@ -206,4 +211,38 @@ class Worker
 
         return $this;
     }
+
+    public function getAccount(): ?User
+    {
+        return $this->account;
+    }
+
+    public function setAccount(?User $account): self
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+//
+//    public function getTestEnt(): ?TestEnt
+//    {
+//        return $this->testEnt;
+//    }
+//
+//    public function setTestEnt(?TestEnt $testEnt): self
+//    {
+//        // unset the owning side of the relation if necessary
+//        if ($testEnt === null && $this->testEnt !== null) {
+//            $this->testEnt->setWork(null);
+//        }
+//
+//        // set the owning side of the relation if necessary
+//        if ($testEnt !== null && $testEnt->getWork() !== $this) {
+//            $testEnt->setWork($this);
+//        }
+//
+//        $this->testEnt = $testEnt;
+//
+//        return $this;
+//    }
 }

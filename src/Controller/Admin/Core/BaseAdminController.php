@@ -14,25 +14,32 @@ class BaseAdminController extends AbstractController
     }
     protected function render(string $view, array $parameters = [], Response $response = null): Response
     {
-        $sideBarNav['admin_dashboard'] = array('icon' => 'fa-tachometer-alt', 'name' => 'Start');
+        $sideBarNav['admin_dashboard'] = array('icon' => 'fas fa-tachometer-alt', 'name' => 'Start');
 
-        $sideBarNav['adminOrders'] = array('icon' => 'fa-clipboard-list', 'name' => 'Zlecenia', 'childs' => array(
-            'admin_orders' => array('icon' => 'fa-clipboard-list', 'name' => 'Przeglądaj'),
-            'admin_order_add' => array('icon' => 'fa-clipboard-list', 'name' => 'Dodaj nowe')
+        $sideBarNav['adminOrders'] = array('icon' => 'fas fa-clipboard-list', 'name' => 'Zlecenia', 'childs' => array(
+            'admin_orders' => array('icon' => 'far fa-circle', 'name' => 'Przeglądaj'),
+            'admin_order_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj nowe')
         ));
 
-        $sideBarNav['adminClients'] = array('icon' => 'fa-user-tag', 'name' => 'Klienci', 'childs' => array(
-            'admin_clients' => array('icon' => 'fa-users', 'name' => 'Przeglądaj'),
-            'admin_client_add' => array('icon' => 'fa-user-plus', 'name' => 'Dodaj')
+        $sideBarNav['adminClients'] = array('icon' => 'fas fa-user-tag', 'name' => 'Klienci', 'childs' => array(
+            'admin_clients' => array('icon' => 'far fa-circle', 'name' => 'Przeglądaj'),
+            'admin_client_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj')
         ));
 
-        $sideBarNav['adminWorkers'] = array('icon' => 'fa-user-tag', 'name' => 'Pracownicy', 'childs' => array(
-            'admin_workers' => array('icon' => 'fa-users', 'name' => 'Przeglądaj'),
-            'admin_workers_add' => array('icon' => 'fa-user-plus', 'name' => 'Dodaj')
+        $sideBarNav['adminWorkers'] = array('icon' => 'fas fa-user-tag', 'name' => 'Pracownicy', 'childs' => array(
+            'admin_workers' => array('icon' => 'far fa-circle', 'name' => 'Profile i stanowiska'),
+            'admin_workers_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj profil')
         ));
 
-        $sideBarNav['app_information'] = array('icon' => 'fa-atom', 'name' => 'Informacje');
-        $sideBarNav['app_logout'] = array('icon' => 'fa-sign-out-alt', 'name' => 'Wyloguj');
+
+        $sideBarNav['system'] = array('icon' => 'fas fa-sliders-h', 'name' => 'System', 'childs' => array(
+            'admin_dashboard' => array('icon' => 'far fa-circle', 'name' => 'Ustawienia'),
+            'admin_user_index' => array('icon' => 'far fa-circle', 'name' => 'Konta'),
+            'admin_user_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj konto')
+        ));
+
+        $sideBarNav['app_information'] = array('icon' => 'fas fa-atom', 'name' => 'Informacje');
+        $sideBarNav['app_logout'] = array('icon' => 'fas fa-sign-out-alt', 'name' => 'Wyloguj');
 
         $defaultParams['app_name'] = 'bazaDB';
         $defaultParams['sideBarNav'] = $sideBarNav;
