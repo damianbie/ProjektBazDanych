@@ -44,6 +44,16 @@ class Serivce
      */
     private $madeBy;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=RepairOrder::class, inversedBy="services")
+     */
+    private $repairOrder;
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $state;
+
     public function __construct()
     {
         $this->madeBy = new ArrayCollection();
@@ -122,6 +132,30 @@ class Serivce
     public function removeMadeBy(Worker $madeBy): self
     {
         $this->madeBy->removeElement($madeBy);
+
+        return $this;
+    }
+
+    public function getRepairOrder(): ?RepairOrder
+    {
+        return $this->repairOrder;
+    }
+
+    public function setRepairOrder(?RepairOrder $repairOrder): self
+    {
+        $this->repairOrder = $repairOrder;
+
+        return $this;
+    }
+
+    public function getState(): ?int
+    {
+        return $this->state;
+    }
+
+    public function setState(int $state): self
+    {
+        $this->state = $state;
 
         return $this;
     }

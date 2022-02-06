@@ -2,50 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4586fe-ca89-4d6e-b1ad-52d161561c93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/routes/admin/clients.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20211221214705.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20211225125741.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20211225134046.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20211227092910.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Data/Roles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/AddEditUserType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/AddressType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CClientType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EditWorkPlaceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/PClientType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/AccountManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/clients/addClient.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/clients/editClient.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/users/addUser.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/workers/editWorkPlace.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/core/form/addressForm.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/admin/vehicles.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20220204105618.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20220204113102.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220203114921.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220203170920.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220203234248.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220204102124.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220204104803.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/VehicleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/StateOfService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/VehiclesData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/VehicleFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/EditUserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RepairOrderType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ServiceType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/VehicleType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/order/addOrder.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/vehicle/addVehicle.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/vehicle/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/client/welcome.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes/admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/admin.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes/admin/worker.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/admin/worker.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ClientsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211107160855.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211107160855.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114092849.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114092849.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114093533.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114093533.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114095709.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114095709.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114112151.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114112151.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114120053.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114120053.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114120506.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114120506.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114131110.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114131110.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114131310.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114131310.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211114180346.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114180346.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120000724.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120000724.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120001728.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120001728.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120002828.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120002828.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120004013.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120004013.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120004531.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120004531.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120163739.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120163739.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120164032.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120164032.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211120173034.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120173034.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211221214705.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211221214705.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211225125741.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211225125741.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211225134046.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211225134046.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211227092910.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211227092910.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20220121150831.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20220121150831.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Core/BaseAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Core/BaseAdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProjectInformationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProjectInformationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/WorkersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ClientFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ClientFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Address.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RepairOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RepairOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Serivce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Serivce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Vehicle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Worker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AddEditWorkerType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AddEditWorkerType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FormTypes/DatePickerType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormTypes/DatePickerType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/WorkerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/WorkerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/MainAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/MainAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AddEditUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AddEditUserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SerivceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SerivceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AccountManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AccountManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/dashboard/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/order/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/order/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/project_information/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/project_information/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/users/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/users/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/workers/detalis.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/workers/detalis.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/workers/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/client/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/core/form/date_picker_widget.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/form/date_picker_widget.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -231,18 +259,20 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/clients" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/order" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\order" />
+      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\vehicle" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\clients" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\workers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin\users" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\templates\admin" />
-      <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin\Security" />
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin\Core" />
     </key>
@@ -301,6 +331,13 @@
       <workItem from="1642244907150" duration="1145000" />
       <workItem from="1642258172544" duration="5000" />
       <workItem from="1642757018283" duration="16576000" />
+      <workItem from="1642972887480" duration="67000" />
+      <workItem from="1643661274492" duration="2683000" />
+      <workItem from="1643848026410" duration="51335000" />
+      <workItem from="1644005905653" duration="5134000" />
+      <workItem from="1644021238571" duration="1575000" />
+      <workItem from="1644061956603" duration="13223000" />
+      <workItem from="1644167125626" duration="13925000" />
     </task>
     <servers />
   </component>

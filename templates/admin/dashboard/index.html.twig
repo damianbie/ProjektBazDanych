@@ -1,5 +1,124 @@
 {% extends 'core/empty_admin.html.twig' %}
-
+{% block scripts %}
+    <script>
+        $(document).ready( function () {
+            $('.fullTable').DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5',
+                ]
+            });
+        });
+    </script>
+{% endblock %}
 {% block mainContent %}
-fdsfsdfdsf
+    {% set states ={
+        1: 'do naprawy',
+        2: 'trwa naprawa',
+        3: 'zakończono',
+        4: 'konsultacja z klientem',
+        5: 'przerwano'
+    } %}
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Twoje zadania</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover fullTable" >
+                <thead>
+                {% set table_header %}
+                    <tr>
+                        <th>ID</th>
+                        <th>Nazwa</th>
+                        <th>Opis</th>
+                        <th>Stan</th>
+                        <th>Data przyjęcia</th>
+                        <th>Akcje</th>
+                    </tr>
+                {% endset %}
+                {{ table_header }}
+                </thead>
+                <tbody>
+                {% for s in activeServices %}
+                    <tr class="expandable-table" aria-expanded="false">
+                        <td>{{ s.id }}</td>
+                        <td>{{ s.name }}</td>
+                        <td>{{ s.description }}</td>
+                        <td>{{ states[s.state] }}</td>
+                        <td>{{ s.repairOrder.orderedAt|date('Y-m-d') }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a type="button" class="btn btn-default " href="{{ path('admin_order_edit', {id: s.repairOrder.id}) }}">Przejdź do zlecenia</a>
+                                <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <div class="dropdown-menu" role="menu" style="">
+                                    <a class="dropdown-item text-warning" href="{{ path('admin_service_close', {id: s.id}) }}">Zakończ</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                {{ table_header }}
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+<div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Zadania bez przydzielonych pracowników</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover fullTable" >
+                <thead>
+                {% set table_header %}
+                    <tr>
+                        <th>ID</th>
+                        <th>Nazwa</th>
+                        <th>Opis</th>
+                        <th>Stan</th>
+                        <th>Data przyjęcia</th>
+                        <th>Akcje</th>
+                    </tr>
+                {% endset %}
+                {{ table_header }}
+                </thead>
+                <tbody>
+                {% for s in seWW %}
+                    <tr class="expandable-table" aria-expanded="false">
+                        <td>{{ s.id }}</td>
+                        <td>{{ s.name }}</td>
+                        <td>{{ s.description }}</td>
+                        <td>{{ states[s.state] }}</td>
+                        <td>{{ s.repairOrder.orderedAt|date('Y-m-d') }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a type="button" class="btn btn-default " href="{{ path('admin_order_edit', {id: s.repairOrder.id}) }}">Przejdź do zlecenia</a>
+                                <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <div class="dropdown-menu" role="menu" style="">
+                                    <a class="dropdown-item text-warning" href="{{ path('admin_service_setMe', {id: s.id}) }}">Przydziel</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                {{ table_header }}
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
 {% endblock %}

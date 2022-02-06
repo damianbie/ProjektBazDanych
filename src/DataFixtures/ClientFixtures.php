@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Address;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Client;
@@ -35,7 +36,19 @@ class ClientFixtures extends Fixture
                 $cl->setIsCompany(true);
             }
 
+            $add = new Address();
+            $add->setTown($this->_faker->city);
+            $add->setCountry("Polska");
+            $add->setHouseNumber(random_int(10, 100));
+            $add->setPostCode($this->_faker->postcode);
+            $add->setState($this->_faker->state);
+            $add->setStreet($this->_faker->streetName);
+            $add->setProvince($this->_faker->state);
+            $manager->persist($add);
+
+            $cl->setCorrespondenceAddress($add);
             $cl->setPhoneNumber($this->_faker->phoneNumber);
+            $cl->setEmail($this->_faker->email);
             $cl->setAddedAt(\DateTimeImmutable::createFromMutable($this->_faker->dateTime($max='now')));
             $manager->persist($cl);
         }

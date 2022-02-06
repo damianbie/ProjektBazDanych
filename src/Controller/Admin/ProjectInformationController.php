@@ -13,7 +13,7 @@ class ProjectInformationController extends BaseAdminController
     {
         return $this->render('admin/project_information/index.html.twig', [
             'active_nav_route' => 'app_information',
-            'content_title' => 'OrderController',
+            'content_title' => '',
         ]);
     }
 }

@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Serivce;
+use App\Entity\Worker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use function Doctrine\ORM\QueryBuilder;
 
 /**
  * @method Serivce|null find($id, $lockMode = null, $lockVersion = null)
@@ -22,19 +24,20 @@ class SerivceRepository extends ServiceEntityRepository
     // /**
     //  * @return Serivce[] Returns an array of Serivce objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function getServicesWithoutWorker()
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
+        $q = $this->createQueryBuilder('s')
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
+
+        $data = [];
+        foreach ($q as $s)
+        {
+            if($s->getMadeBy()->count() == 0)
+                $data[] = $s;
+        }
+        return $data;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Serivce

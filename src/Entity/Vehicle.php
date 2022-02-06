@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\VehicleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,9 +45,14 @@ class Vehicle
     private $registrationNumber;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="vehicles")
+     * @ORM\OneToMany(targetEntity=RepairOrder::class, mappedBy="vehicle")
      */
-    private $owner;
+    private $repairOrders;
+
+    public function __construct()
+    {
+        $this->repairOrders = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -112,15 +119,34 @@ class Vehicle
         return $this;
     }
 
-    public function getOwner(): ?Client
+    /**
+     * @return Collection|RepairOrder[]
+     */
+    public function getRepairOrders(): Collection
     {
-        return $this->owner;
+        return $this->repairOrders;
     }
 
-    public function setOwner(?Client $owner): self
+    public function addRepairOrder(RepairOrder $repairOrder): self
     {
-        $this->owner = $owner;
+        if (!$this->repairOrders->contains($repairOrder)) {
+            $this->repairOrders[] = $repairOrder;
+            $repairOrder->setVehicle($this);
+        }
 
         return $this;
     }
+
+    public function removeRepairOrder(RepairOrder $repairOrder): self
+    {
+        if ($this->repairOrders->removeElement($repairOrder)) {
+            // set the owning side to null (unless already changed)
+            if ($repairOrder->getVehicle() === $this) {
+                $repairOrder->setVehicle(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

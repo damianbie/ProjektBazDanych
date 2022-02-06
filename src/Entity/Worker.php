@@ -64,11 +64,17 @@ class Worker
      */
     private $account;
 
+    /**
+     * @ORM\OneToMany(targetEntity=RepairOrder::class, mappedBy="registeredBy")
+     */
+    private $repairOrders;
+
 
     public function __construct()
     {
         $this->workPlace = new ArrayCollection();
         $this->serivces = new ArrayCollection();
+        $this->repairOrders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -245,4 +251,34 @@ class Worker
 //
 //        return $this;
 //    }
+
+/**
+ * @return Collection|RepairOrder[]
+ */
+public function getRepairOrders(): Collection
+{
+    return $this->repairOrders;
+}
+
+public function addRepairOrder(RepairOrder $repairOrder): self
+{
+    if (!$this->repairOrders->contains($repairOrder)) {
+        $this->repairOrders[] = $repairOrder;
+        $repairOrder->setRegisteredBy($this);
+    }
+
+    return $this;
+}
+
+public function removeRepairOrder(RepairOrder $repairOrder): self
+{
+    if ($this->repairOrders->removeElement($repairOrder)) {
+        // set the owning side to null (unless already changed)
+        if ($repairOrder->getRegisteredBy() === $this) {
+            $repairOrder->setRegisteredBy(null);
+        }
+    }
+
+    return $this;
+}
 }

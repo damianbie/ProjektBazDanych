@@ -17,7 +17,7 @@ use App\Repository\WorkerRepository;
 use App\Data\Roles;
 
 
-class AddEditUserType extends AbstractType
+class EditUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -33,17 +33,18 @@ class AddEditUserType extends AbstractType
                 'label' => 'Profil pracownika',
                 'required' => true,
                 'class' => Worker::class,
+                'disabled' => true,
                 'query_builder' => function (WorkerRepository  $er) {
-                    return $er->findWorkersWithoutAccBuilder();
+                    return $er->createQueryBuilder('s');
                 },'choice_label' => function(Worker $work){
                     return sprintf('%s %s (ID: %d)',
-                    $work->getName(),
-                    $work->getSurname(),
-                    $work->getId()
+                        $work->getName(),
+                        $work->getSurname(),
+                        $work->getId()
                     );
                 },
                 'placeholder' => 'Wybierz profil pracownika'
-                ])
+            ])
             ->add('submit',SubmitType::class, ['label' => 'Przypisz konto']);
         ;
     }

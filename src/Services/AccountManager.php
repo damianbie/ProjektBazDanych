@@ -50,6 +50,11 @@ class AccountManager
         $this->_entityManager->persist($user);
         $this->_entityManager->flush();
     }
+    public function updatePass(User $user):User
+    {
+        $user->setPassword($this->_passwordHasher->hashPassword($user, $user->getPassword()));
+        return $user;
+    }
 
     private function _getUser(Worker $w): User
     {

@@ -37,7 +37,9 @@ admin_workPlace_delete:
   requirements:
     id: '\d+'
 
-
+admin_user_edit:
+  path: /uzytkownik/edytuj/{id}
+  controller: App\Controller\Admin\UsersController::edituser
 admin_user_add:
   path: /uzytkownik/dodaj
   controller: App\Controller\Admin\UsersController::addUser
@@ -52,6 +54,7 @@ admin_user_enable:
   controller: App\Controller\Admin\UsersController::enableUser
   requirements:
     id: '\d+'
+
 admin_user_disable:
   path: /uzytkownik/{id}/deaktywuj
   controller: App\Controller\Admin\UsersController::disableUser

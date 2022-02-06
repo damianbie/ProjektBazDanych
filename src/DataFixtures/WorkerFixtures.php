@@ -48,7 +48,7 @@ class WorkerFixtures extends Fixture
         $manager->persist($worker);
 
         $u = new User();
-        $u->setEmail('damianb121@gmail.com');
+        $u->setEmail('damian@test.com');
         $u->setPassword('admin');
         $u->setActive(true);
         $u->setWorker($worker);

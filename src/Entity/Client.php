@@ -71,9 +71,20 @@ class Client
      */
     private $vehicles;
 
+    /**
+     * @ORM\OneToMany(targetEntity=RepairOrder::class, mappedBy="client")
+     */
+    private $repairOrders;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
     public function __construct()
     {
         $this->vehicles = new ArrayCollection();
+        $this->repairOrders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -213,6 +224,48 @@ class Client
                 $vehicle->setOwner(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RepairOrder[]
+     */
+    public function getRepairOrders(): Collection
+    {
+        return $this->repairOrders;
+    }
+
+    public function addRepairOrder(RepairOrder $repairOrder): self
+    {
+        if (!$this->repairOrders->contains($repairOrder)) {
+            $this->repairOrders[] = $repairOrder;
+            $repairOrder->setClient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRepairOrder(RepairOrder $repairOrder): self
+    {
+        if ($this->repairOrders->removeElement($repairOrder)) {
+            // set the owning side to null (unless already changed)
+            if ($repairOrder->getClient() === $this) {
+                $repairOrder->setClient(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

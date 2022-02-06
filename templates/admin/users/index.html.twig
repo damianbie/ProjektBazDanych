@@ -21,30 +21,10 @@
                     'pdfHtml5',
                 ]
             });
-
-            $('#dataTableStanowiska tbody, #dataTablePracownicy tbody').on( 'click', 'tr', function () {
-                $(this).toggleClass('table-active');
-            } );
         });
     </script>
 {% endblock %}
 {% block mainContent %}
-    {% set flash_sc = app.flashes('successForm') %}
-    {% if flash_sc is defined and flash_sc|length > 0 %}
-        {% if flash_sc[0] == 0 %} {% set _scc = 0 %}
-        {% else %} {% set _scc = 1 %} {% endif %}
-
-        <div class="alert {% if _scc==1 %}alert-success{% else %} alert-warning {% endif %} alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fas fa-ban"></i> {% if _scc==1 %}Sukces!{% else %}Nieoczekiwany błąd{% endif %}</h5>
-            <ul>
-                {% for ms in app.flashes('msg') %}
-                    <li>{{ ms }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Konta pracowników w bazie danych</h3>
@@ -98,7 +78,7 @@
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu" role="menu" style="">
-                                        <a class="dropdown-item" href="{{ path('admin_workers_edit', {id: usr.id}) }}">Edytuj</a>
+                                        <a class="dropdown-item" href="{{ path('admin_user_edit', {id: usr.id}) }}">Edytuj</a>
                                         <a class="dropdown-item text-danger" href="{{ path('admin_workers_delete', {id: usr.id}) }}">Usuń</a>
                                     </div>
                                 </div>

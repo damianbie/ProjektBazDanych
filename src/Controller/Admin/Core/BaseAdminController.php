@@ -26,6 +26,11 @@ class BaseAdminController extends AbstractController
             'admin_client_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj')
         ));
 
+        $sideBarNav['adminVehicles'] = array('icon' => 'fas fa-car', 'name' => 'Pojazdy', 'childs' => array(
+            'admin_vehicles' => array('icon' => 'far fa-circle', 'name' => 'Przeglądaj'),
+            'admin_vehicles_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj')
+        ));
+
         $sideBarNav['adminWorkers'] = array('icon' => 'fas fa-user-tag', 'name' => 'Pracownicy', 'childs' => array(
             'admin_workers' => array('icon' => 'far fa-circle', 'name' => 'Profile i stanowiska'),
             'admin_workers_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj profil')
@@ -33,7 +38,6 @@ class BaseAdminController extends AbstractController
 
 
         $sideBarNav['system'] = array('icon' => 'fas fa-sliders-h', 'name' => 'System', 'childs' => array(
-            'admin_dashboard' => array('icon' => 'far fa-circle', 'name' => 'Ustawienia'),
             'admin_user_index' => array('icon' => 'far fa-circle', 'name' => 'Konta'),
             'admin_user_add' => array('icon' => 'far fa-circle', 'name' => 'Dodaj konto')
         ));
