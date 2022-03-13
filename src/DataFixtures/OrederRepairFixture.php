@@ -59,7 +59,7 @@ class OrederRepairFixture extends Fixture implements DependentFixtureInterface
                     $serv->addMadeBy($pr[array_rand($pr)]);
 
                 if($order->getEndDate() == null)
-                    $serv->setState(random_int(0, 5));
+                    $serv->setState(random_int(1, 5));
                 else
                     $serv->setState(3);
 

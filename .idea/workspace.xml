@@ -2,81 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4586fe-ca89-4d6e-b1ad-52d161561c93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/routes/admin/vehicles.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204105618.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204113102.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220203114921.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220203170920.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220203234248.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220204102124.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/test/Version20220204104803.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/VehicleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Data/StateOfService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Data/VehiclesData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/VehicleFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EditUserType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RepairOrderType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ServiceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/VehicleType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/order/addOrder.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/vehicle/addVehicle.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/vehicle/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/client/welcome.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BazyDanychV1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BazyDanychV1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/admin/worker.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/admin/worker.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211107160855.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211107160855.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114092849.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114092849.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114093533.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114093533.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114095709.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114095709.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114112151.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114112151.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114120053.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114120053.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114120506.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114120506.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114131110.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114131110.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114131310.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114131310.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211114180346.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211114180346.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120000724.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120000724.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120001728.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120001728.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120002828.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120002828.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120004013.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120004013.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120004531.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120004531.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120163739.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120163739.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120164032.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120164032.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211120173034.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211120173034.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211221214705.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211221214705.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211225125741.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211225125741.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211225134046.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211225134046.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211227092910.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20211227092910.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20220121150831.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/test/Version20220121150831.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/Core/BaseAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/Core/BaseAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProjectInformationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProjectInformationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1234])'" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ClientFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ClientFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/WorkerFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RepairOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RepairOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Serivce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Serivce.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Vehicle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Worker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AddEditUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AddEditUserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SerivceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SerivceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/AccountManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AccountManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/dashboard/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/order/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/order/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/project_information/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/project_information/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/users/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/users/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/empty_admin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/OrederRepairFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/OrederRepairFixture.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,9 +17,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -109,6 +40,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -255,12 +189,19 @@
   </component>
   <component name="ProjectId" id="20VzSwtD6EcVqrjoLcWKTTifV6a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/order" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -277,24 +218,13 @@
       <recent name="C:\Users\damia\PhpstormProjects\BazyDanychV1\src\Controller\Admin\Core" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -337,21 +267,25 @@
       <workItem from="1644005905653" duration="5134000" />
       <workItem from="1644021238571" duration="1575000" />
       <workItem from="1644061956603" duration="13223000" />
-      <workItem from="1644167125626" duration="13925000" />
+      <workItem from="1644167125626" duration="14026000" />
+      <workItem from="1644221915902" duration="3341000" />
+      <workItem from="1644234583797" duration="593000" />
+      <workItem from="1644340709427" duration="11000" />
+      <workItem from="1644485557088" duration="104000" />
+      <workItem from="1644485709923" duration="605000" />
+      <workItem from="1647197274564" duration="1615000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

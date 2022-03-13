@@ -42,7 +42,7 @@ class UsersController extends BaseAdminController
         if($form->isSubmitted() && $form->isValid())
         {
             $usr = $form->getData();
-            $ac->createUser($usr);
+            $this->ac->createUser($usr);
 
             $this->addFlash('msg', sprintf("Utworzono nowe konto  %s (id: %d) ", $usr->getEmail(), $usr->getID()));
             $this->addFlash('successForm', 1);
